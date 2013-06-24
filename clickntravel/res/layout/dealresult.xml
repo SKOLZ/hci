@@ -6,7 +6,7 @@
     android:padding="5dp" >
 
     <RelativeLayout
-        android:id="@+id/relativeLayout1"
+        android:id="@+id/relativeLayout0"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
@@ -112,6 +112,20 @@
                     android:layout_below="@id/retDate" />
             </LinearLayout>
         </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Switch
+            android:id="@+id/my_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Agregar a mis ofertas"
+            android:textOff="NO"
+            android:textOn="YES" />
     </RelativeLayout>
 
 </LinearLayout>

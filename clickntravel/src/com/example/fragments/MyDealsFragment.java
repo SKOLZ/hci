@@ -64,11 +64,7 @@ public class MyDealsFragment extends Fragment {
 			
 			toast.setGravity(Gravity.CENTER, 0, 0);
 			toast.show();
-
-//			FragmentHandler fragmentHandler = new FragmentHandler(getFragmentManager());
-//
-//			fragmentHandler.setFragment(FragmentKey.MAIN);
-
+			
 			return view;
 		}
 		

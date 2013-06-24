@@ -19,14 +19,18 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.example.api.ApiIntent;
@@ -273,6 +277,8 @@ public class ResultsSearchFragment extends Fragment {
 				@Override
 				public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+					Log.d("puto", "puto");
+					
 					// Get the cursor, positioned to the corresponding row in the result set
 					Cursor cursor = (Cursor) mListView.getItemAtPosition(position);
 
@@ -288,6 +294,22 @@ public class ResultsSearchFragment extends Fragment {
 					MyDealsFragment.dealsList.add(newDeal);
 				}
 			});
+			
+//			Log.d("tengo sueño", "" + view.findViewById(R.id.deals_list_view).);
+			
+//			Switch onOffSwitch = (Switch) mListView.findViewById(R.id.my_switch); 
+//			
+//			Log.d("mList", "" + mListView);
+//			Log.d("sw", "" + onOffSwitch);
+//			
+//			onOffSwitch.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+//
+//			@Override
+//			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//			    Log.v("Switch State=", ""+isChecked);
+//			}       
+//
+//			});
 		}
 	}
 

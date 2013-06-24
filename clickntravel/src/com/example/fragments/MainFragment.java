@@ -117,10 +117,10 @@ public class MainFragment extends Fragment implements
 
 			private void addFlight(String name, String id) {
 				
-//				if (name.contains("Buenos Aires")) {
-//					
-//					return;
-//				}
+				if (name.contains("Buenos Aires")) {
+					
+					return;
+				}
 
 				if (name.contains("Barcelona")) {
 					
