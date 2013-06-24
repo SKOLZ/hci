@@ -121,9 +121,11 @@ public class ResultsSearchFragment extends Fragment {
 										.getJSONObject("total")
 										.optString("total");
 
-								if (dealPrices.contains(price)) 
-									addDeal(indexMinPrice, minPrice, dealArray);
-								else if (minPrice == null || Double.valueOf(minPrice) > Double.valueOf(price)) {
+								if (dealPrices.contains(price)) {
+									
+									addDeal(dealPrices.indexOf(price), price, dealArray);
+								
+								} else if (minPrice == null || Double.valueOf(minPrice) > Double.valueOf(price)) {
 
 									minPrice = price;
 									indexMinPrice = i;

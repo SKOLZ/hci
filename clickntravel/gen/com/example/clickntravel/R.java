@@ -206,11 +206,12 @@ public final class R {
         public static final int arrival_scheduled_time=0x7f070026;
         public static final int cancelled=0x7f07002b;
         public static final int comfort_rating_text=0x7f070036;
+        public static final int comment_added=0x7f070042;
         public static final int comment_row_text=0x7f07003c;
         public static final int comment_text=0x7f07003b;
         public static final int config_freq=0x7f070013;
         public static final int config_freq_summary=0x7f070012;
-        public static final int deal=0x7f070044;
+        public static final int deal=0x7f070045;
         public static final int departure_airport_gate=0x7f070023;
         public static final int departure_airport_terminal=0x7f070021;
         public static final int departure_city=0x7f07001e;
@@ -235,7 +236,7 @@ public final class R {
         public static final int main_button_configuration=0x7f070003;
         public static final int main_button_mydeals=0x7f070005;
         public static final int main_button_myflights=0x7f070004;
-        public static final int main_button_resultssearch=0x7f070042;
+        public static final int main_button_resultssearch=0x7f070043;
         public static final int menu_settings=0x7f070011;
         public static final int millage_program_rating_text=0x7f070035;
         public static final int my_deals=0x7f07000c;
@@ -248,10 +249,10 @@ public final class R {
         public static final int punctuality_rating_text=0x7f070034;
         public static final int recommend_switch_text=0x7f070038;
         public static final int remove_flight_toast=0x7f07003e;
-        public static final int save_config=0x7f070045;
+        public static final int save_config=0x7f070046;
         public static final int scheduled=0x7f070027;
         public static final int search_hint=0x7f07000a;
-        public static final int search_view_text=0x7f070043;
+        public static final int search_view_text=0x7f070044;
         public static final int see_comments=0x7f070041;
         public static final int status_change=0x7f070015;
         public static final int status_change_summary=0x7f070014;
