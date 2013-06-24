@@ -26,11 +26,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.CompoundButton;
-import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
-import android.widget.Switch;
 import android.widget.Toast;
 
 import com.example.api.ApiIntent;
@@ -39,6 +36,7 @@ import com.example.api.Callback;
 import com.example.clickntravel.R;
 import com.example.utils.Deal;
 import com.example.utils.FlightsDbAdapter;
+import com.example.utils.MyDate;
 
 public class ResultsSearchFragment extends Fragment {
 
@@ -176,8 +174,8 @@ public class ResultsSearchFragment extends Fragment {
 							Deal curr = new Deal(idFrom, getCity(nameFrom), idTo,
 									getCity(nameTo), getFloorPrice(price), airlineId,
 									flightId, flightNumber,
-									convertDate(depTime),
-									convertDate(arrivalTime));
+									MyDate.convertDate(depTime),
+									MyDate.convertDate(arrivalTime));
 
 							dealsList.add(curr);
 							
@@ -186,18 +184,6 @@ public class ResultsSearchFragment extends Fragment {
 									curr.getDepTime(), curr.getArrivalTime());
 							
 						} catch (JSONException e) {	}
-					}
-
-					private String convertDate(String date) {
-
-						String year = date.substring(0, 4);
-						String month = date.substring(5, 7);
-						String day = date.substring(8, 10);
-
-						String hour = date.substring(11, 13);
-						String min = date.substring(14, 16);
-
-						return month + '/' + day + "/" + year + " " + hour + ":" + min;
 					}
 
 					private String getFloorPrice(String price) {
