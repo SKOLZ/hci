@@ -49,12 +49,14 @@ public class FragmentHandler {
 
 	public void setFragment(FragmentKey fragmentKey, Bundle bundle) {
 		Fragment fragment = fragmentMap.get(fragmentKey);
+		currentFragment = fragment;
 		fragment.setArguments(bundle);
 		setFragment(fragment);
 	}
 
 	private void setFragment(Fragment fragment) {
 		FragmentTransaction transaction = fragmentManager.beginTransaction();
+		currentFragment = fragment;
 		transaction.replace(R.id.container, fragment).addToBackStack(null).commit();
 	}
 
