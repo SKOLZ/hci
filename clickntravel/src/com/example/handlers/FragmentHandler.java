@@ -43,7 +43,8 @@ public class FragmentHandler {
 	}
 
 	public void setFragment(FragmentKey fragmentKey) {
-		setFragment(fragmentMap.get(fragmentKey));
+		currentFragment = fragmentMap.get(fragmentKey);
+		setFragment(currentFragment);
 	}
 
 	public void setFragment(FragmentKey fragmentKey, Bundle bundle) {

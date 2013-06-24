@@ -152,20 +152,19 @@ public class MainActivity extends FragmentActivity {
 	};
 
 	private boolean menuSelection(MenuItem item) {
+		hideDetailOptions();
+		hideSubmitComment();
 		switch (item.getItemId()) {
 		case 0:
 			((FlightListFragment) fragmentHandler.getFragment(FragmentKey.FLIGHT_LIST)).removeFlight();
 			this.onBackPressed();
-			hideDetailOptions();
 			Toast.makeText(this, R.string.remove_flight_toast,
 					Toast.LENGTH_SHORT).show();
 			return true;
 		case 1:
-			hideDetailOptions();
 			fragmentHandler.setFragment(FragmentKey.ADD_COMMENT);
 			return true;
 		case 2:
-			hideDetailOptions();
 			fragmentHandler.setFragment(FragmentKey.SEE_COMMENTS);
 			return true;
 		case 3:
