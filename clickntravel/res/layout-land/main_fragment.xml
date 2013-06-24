@@ -18,9 +18,15 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
             android:orientation="vertical" >
+
+            <ListView
+                android:id="@+id/dealList"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#BBBBBB" />
 
             <Button
                 android:id="@+id/myflights"
@@ -51,7 +57,6 @@
                 android:onClick="onClickAboutUs"
                 android:text="@string/main_button_aboutus"
                 android:textColor="#DDDDDD" />
-
         </LinearLayout>
     </LinearLayout>
 

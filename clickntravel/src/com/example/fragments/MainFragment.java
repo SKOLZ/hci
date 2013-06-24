@@ -81,6 +81,7 @@ public class MainFragment extends Fragment implements
 		view = inflater.inflate(R.layout.main_fragment, container, false);
 		
 		mListView = (ListView) view.findViewById(R.id.dealList);
+		
 		createCities();
 		
 		return view;
