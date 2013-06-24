@@ -161,6 +161,7 @@ public class MainActivity extends FragmentActivity {
 		case 4:
 			((AddCommentFragment) fragmentHandler.getFragment(FragmentKey.ADD_COMMENT)).addComment();
 			this.onBackPressed();
+			Toast.makeText(this, R.string.Comment_added, Toast.LENGTH_SHORT).show();
 			return true;
 		case android.R.id.home:
 			this.onBackPressed();

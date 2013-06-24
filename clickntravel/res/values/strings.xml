@@ -67,6 +67,7 @@
     <string name="get_fligh_error">Invalid flight</string>
     <string name="already_added">Flight already added</string>
     <string name="see_comments">Comments</string>
+	<string name="comment_added">Comment added</string>
     
     
     <string name="main_button_resultssearch">Ofert Results</string>
