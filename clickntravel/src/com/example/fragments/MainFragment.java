@@ -116,13 +116,20 @@ public class MainFragment extends Fragment implements
 			}
 
 			private void addFlight(String name, String id) {
-				if (name.contains("Buenos Aires"))
-					return;
+				
+//				if (name.contains("Buenos Aires")) {
+//					
+//					return;
+//				}
 
-				if (name.contains("Barcelona"))
+				if (name.contains("Barcelona")) {
+					
 					name = "Barcelona, España";
-				else if (name.contains("Madrid"))
+					
+				} else if (name.contains("Madrid")) {
+					
 					name = "Madrid, Comunidad de Madrid, España";
+				}
 
 				citiesMap.put(name, new City(id, name));
 				mDbHelper.createFlights(name);

@@ -19,6 +19,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +27,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.Toast;
 
 import com.example.api.ApiIntent;
 import com.example.api.ApiResultReceiver;
@@ -133,9 +135,21 @@ public class ResultsSearchFragment extends Fragment {
 							}
 
 							if (dealsList.isEmpty()) {
+								
 								addDeal(indexMinPrice, minPrice, dealArray);
 							}
+							
 						} catch (JSONException e) {	}
+						
+						if (dealsList.isEmpty()) {
+						
+							Toast toast = Toast.makeText(getActivity(), R.string.no_deals_found,
+									Toast.LENGTH_LONG);
+							
+							toast.setGravity(Gravity.CENTER, 0, 0);
+							toast.show();
+						}
+						
 						showResults(nameTo + "*");
 					}
 
@@ -154,6 +168,7 @@ public class ResultsSearchFragment extends Fragment {
 							String arrivalTime = segments.getJSONObject("arrival").optString("date");
 
 							nameFrom = segments.getJSONObject("departure").optString("cityName");
+							
 							Deal curr = new Deal(idFrom, getCity(nameFrom), idTo,
 									getCity(nameTo), getFloorPrice(price), airlineId,
 									flightId, flightNumber,
@@ -161,22 +176,24 @@ public class ResultsSearchFragment extends Fragment {
 									convertDate(arrivalTime));
 
 							dealsList.add(curr);
+							
 							mDbHelper.createFlights(curr.getPrice(),
 									curr.getNameFrom(), curr.getNameTo(),
 									curr.getDepTime(), curr.getArrivalTime());
+							
 						} catch (JSONException e) {	}
 					}
 
 					private String convertDate(String date) {
 
 						String year = date.substring(0, 4);
-						String day = date.substring(5, 7);
-						String month = date.substring(8, 10);
+						String month = date.substring(5, 7);
+						String day = date.substring(8, 10);
 
 						String hour = date.substring(11, 13);
 						String min = date.substring(14, 16);
 
-						return day + '/' + month + "/" + year + " " + hour + ":" + min;
+						return month + '/' + day + "/" + year + " " + hour + ":" + min;
 					}
 
 					private String getFloorPrice(String price) {

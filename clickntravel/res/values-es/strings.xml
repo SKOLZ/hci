@@ -69,6 +69,9 @@
     <string name="main_button_resultssearch">Resultados de ofertas</string>
     <string name="search_view_text">Buscar ofertas por destino</string>
     <string name="deal">Oferta: </string>
-    <string name="price">Precio: </string>   
+    <string name="price">Precio: </string>
+    
+    <string name="no_deals">No hay ofertas añadidas</string>
+    <string name="no_deals_found">No hay ofertas disponibles para el destino elegido</string>
     
 </resources>
