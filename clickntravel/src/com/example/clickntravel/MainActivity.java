@@ -22,6 +22,7 @@ import com.example.fragments.AddCommentFragment;
 import com.example.fragments.ConfigurationFragment;
 import com.example.fragments.FlightInfoFragment;
 import com.example.fragments.FlightListFragment;
+import com.example.fragments.MainFragment;
 import com.example.fragments.MyFlightsFragment;
 import com.example.handlers.FragmentHandler;
 import com.example.notifications.NotificationIntent;
@@ -75,15 +76,32 @@ public class MainActivity extends FragmentActivity {
 		actionBar.setIcon(R.drawable.back);
 	}
 
+	public void closeDB() {
+	
+		if (MainFragment.mDbHelper != null) {
+			
+			MainFragment.mDbHelper.close();
+		}
+	}
+	
 	public void onClickMyFlights(View view) {
+		
+		closeDB();
+		
 		this.fragmentHandler.setFragment(FragmentKey.MY_FLIGHTS);
 	}
 
 	public void onClickAboutUs(View view) {
+		
+		closeDB();
+		
 		this.fragmentHandler.setFragment(FragmentKey.ABOUT_US);
 	}
 
 	public void onClickMyDeals(View view) {
+		
+		closeDB();
+		
 		this.fragmentHandler.setFragment(FragmentKey.MY_DEALS);
 	}
 

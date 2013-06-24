@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -45,7 +46,9 @@ public class MainFragment extends Fragment implements
 	private SearchView mSearchView;
 	private TextView mStatusView;
 	private ListView mListView;
-	private FlightsDbAdapter mDbHelper;
+	private View view;
+
+	public static FlightsDbAdapter mDbHelper;
 	private Map<String, City> citiesMap;
 
 	@Override
@@ -75,9 +78,12 @@ public class MainFragment extends Fragment implements
 
 		mDbHelper.deleteAllFlights();
 
+		view = inflater.inflate(R.layout.main_fragment, container, false);
+		
+		mListView = (ListView) view.findViewById(R.id.dealList);
 		createCities();
-
-		return inflater.inflate(R.layout.main_fragment, container, false);
+		
+		return view;
 	}
 
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -88,7 +94,6 @@ public class MainFragment extends Fragment implements
 		mSearchView.setIconifiedByDefault(false); // Pone la lupita a la derecha si se comenta
 		mSearchView.setOnQueryTextListener((OnQueryTextListener) this);
 		mSearchView.setOnCloseListener((OnCloseListener) this);
-		mListView = (ListView) this.getActivity().findViewById(R.id.dealList);
 		
 		// Setea el color del textito de la search view
 		String text = "<font color = #DDDDDD>" + getString(R.string.search_view_text) + "</font>";
