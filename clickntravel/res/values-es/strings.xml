@@ -14,7 +14,7 @@
     <string name="search_hint">Buscar vuelos</string>
     <string name="hello_world">Hello world!</string>
     <string name="my_deals">Mis ofertas!</string>
-    <string name="aboutus_text">Trabajo práctico especial realizado para la materia “Human Computer Interaction”.El diseño y la programación del sitio fueron realizados por los alumnos:</string>
+    <string name="aboutus_text">Trabajo práctico especial realizado para la materia “Human Computer Interaction”.\nEl diseño y la programación del sitio fueron realizados por los alumnos:</string>
     <string name="names"> Lori, Tomás (52558)\nRomarion, Germán Rodrigo (51296)\nZanzotti, Gabriel Andrés (52067)\nMamani, Betina Cynthia (52310)</string>
     <string name="notifications">Notificar cambios de...</string>
     <string name="frequency">Frecuencia de notificaciones</string>
@@ -47,7 +47,7 @@
     <string name="landed">Aterrizado</string>
     <string name="cancelled">Cancelado</string>
     <string name="unknown">Desconocido</string>
-    <string name="no_internet_connection">fallo la coneccion a internet</string>
+    <string name="no_internet_connection">Fallo la conexión a internet</string>
     <string name="invalid_airline">Aerolinea invalida</string>
     <string name="flight">Vuelo: </string>
     <string name="n_a">Sin Definir</string>
@@ -68,6 +68,7 @@
     
     <string name="main_button_resultssearch">Resultados de ofertas</string>
     <string name="search_view_text">Buscar ofertas por destino</string>
-    <string name="deal">Oferta: </string>     
+    <string name="deal">Oferta: </string>
+    <string name="price">Precio: </string>   
     
 </resources>

@@ -11,39 +11,43 @@
         android:layout_height="wrap_content" >
 
         <TextView
-            android:id="@+id/sname"
+            android:id="@+id/from"
             style="@android:style/TextAppearance.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingRight="5sp" />
+            android:paddingRight="5sp"
+            android:text="@string/departure_city" />
 
         <TextView
-            android:id="@+id/scity"
+            android:id="@+id/to"
             style="@android:style/TextAppearance.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/sname" />
+            android:text="@string/arrival_city" />
 
         <TextView
-            android:id="@+id/sstate"
+            android:id="@+id/depDate"
             style="@android:style/TextAppearance.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/scity" />
+            android:layout_below="@id/to"
+            android:text="@string/departure_scheduled_time" />
 
         <TextView
-            android:id="@+id/szipCode"
+            android:id="@+id/retDate"
             style="@android:style/TextAppearance.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/sstate" />
+            android:layout_below="@id/depDate"
+            android:text="@string/arrival_scheduled_time" />
         
         <TextView
-            android:id="@+id/scustomer"
+            android:id="@+id/price"
             style="@android:style/TextAppearance.Medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/szipCode" />
+            android:layout_below="@id/retDate"
+            android:text="@string/price" />
 
     </RelativeLayout>
 

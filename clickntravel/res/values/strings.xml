@@ -14,7 +14,7 @@
     <string name="search_hint">Search flights</string>
     <string name="hello_world">Hello world!</string>
     <string name="my_deals">My Deals!</string>
-    <string name="aboutus_text">Special Project for the Human Computer Interaction course taken in ITBA. The design and programming was done by:</string>
+    <string name="aboutus_text">Special Project for the Human Computer Interaction course taken in ITBA.\nThe design and programming was done by:</string>
     <string name="names"> Lori, Tomás (52558)\nRomarion, Germán Rodrigo (51296)\nZanzotti, Gabriel Andrés (52067)\nMamani, Betina Cynthia (52310)</string>
     <string name="notifications">Notify changes in...</string>
     <string name="frequency">Notification Frequency</string>
@@ -69,9 +69,9 @@
     <string name="see_comments">Comments</string>
 	<string name="comment_added">Comment added</string>
     
-    
-    <string name="main_button_resultssearch">Ofert Results</string>
+    <string name="main_button_resultssearch">Deal Results</string>
     <string name="search_view_text">Search deals by destination</string>
-    <string name="deal">Deal: </string>     
+    <string name="deal">Deal: </string>  
+    <string name="price">Price: </string>     
     
 </resources>

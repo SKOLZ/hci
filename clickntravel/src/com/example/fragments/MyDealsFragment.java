@@ -72,12 +72,12 @@ public class MyDealsFragment extends Fragment {
 
 			// Specify the Corresponding layout elements where we want the
 			// columns to go
-			int[] to = new int[] { R.id.scustomer, R.id.sname, R.id.scity, R.id.sstate, R.id.szipCode };
+			int[] to = new int[] { R.id.price, R.id.from, R.id.to, R.id.depDate, R.id.retDate };
 
 			// Create a simple cursor adapter for the definitions and apply them
 			// to the ListView
 			@SuppressWarnings("deprecation")
-			SimpleCursorAdapter Flights = new SimpleCursorAdapter(this.getActivity(), R.layout.mydealresult, cursor, from, to);
+			SimpleCursorAdapter Flights = new SimpleCursorAdapter(this.getActivity(), R.layout.dealresult, cursor, from, to);
 			mListView.setAdapter(Flights);
 
 			// Define the on-click listener for the list items

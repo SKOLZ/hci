@@ -168,11 +168,11 @@ public class MainFragment extends Fragment implements
 
 			// Specify the Corresponding layout elements where we want the
 			// columns to go
-			int[] to = new int[] { R.id.scity };
+			int[] to = new int[] { R.id.to };
 
 			// Create a simple cursor adapter for the definitions and apply them
 			// to the ListView
-			@SuppressWarnings("deprecation")
+			
 			SimpleCursorAdapter Flights = new SimpleCursorAdapter(this.getActivity(), R.layout.flightresult, cursor, from, to);
 			mListView.setAdapter(Flights);
 

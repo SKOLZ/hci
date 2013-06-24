@@ -10,41 +10,97 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
-        <TextView
-            android:id="@+id/sname"
-            style="@android:style/TextAppearance.Small"
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingRight="5sp" />
+            android:layout_height="wrap_content" >
 
-        <TextView
-            android:id="@+id/scity"
-            style="@android:style/TextAppearance.Small"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/sname" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
 
-        <TextView
-            android:id="@+id/sstate"
-            style="@android:style/TextAppearance.Small"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/scity" />
+                <TextView
+                    android:id="@+id/departure_text"
+                    style="@android:style/TextAppearance.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="5sp"
+                    android:text="@string/departure_city" />
 
-        <TextView
-            android:id="@+id/szipCode"
-            style="@android:style/TextAppearance.Small"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/sstate" />
-        
-        <TextView
-            android:id="@+id/scustomer"
-            style="@android:style/TextAppearance.Medium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/szipCode" />
+                <TextView
+                    android:id="@+id/arrival_text"
+                    style="@android:style/TextAppearance.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="5sp"
+                    android:text="@string/arrival_city" />
 
+                <TextView
+                    android:id="@+id/departure_scheduled_text"
+                    style="@android:style/TextAppearance.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="5sp"
+                    android:text="@string/departure_scheduled_time" />
+
+                <TextView
+                    android:id="@+id/arrival_scheduled_text"
+                    style="@android:style/TextAppearance.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="5sp"
+                    android:text="@string/arrival_scheduled_time" />
+
+                <TextView
+                    android:id="@+id/price_text"
+                    style="@android:style/TextAppearance.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="5sp"
+                    android:text="@string/price" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/from"
+                    style="@android:style/TextAppearance.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="5sp" />
+
+                <TextView
+                    android:id="@+id/to"
+                    style="@android:style/TextAppearance.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/from" />
+
+                <TextView
+                    android:id="@+id/depDate"
+                    style="@android:style/TextAppearance.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/to" />
+
+                <TextView
+                    android:id="@+id/retDate"
+                    style="@android:style/TextAppearance.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/depDate" />
+
+                <TextView
+                    android:id="@+id/price"
+                    style="@android:style/TextAppearance.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/retDate" />
+            </LinearLayout>
+        </LinearLayout>
     </RelativeLayout>
 
 </LinearLayout>
