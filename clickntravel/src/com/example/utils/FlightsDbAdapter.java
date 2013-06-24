@@ -129,4 +129,5 @@ public class FlightsDbAdapter {
 		doneDelete = mDb.delete(FTS_VIRTUAL_TABLE, null, null);
 		return doneDelete > 0;
 	}
+	
 }

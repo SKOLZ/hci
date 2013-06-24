@@ -190,7 +190,8 @@ public class MainFragment extends Fragment implements
 					resultSearchBundle.putString("cityId", city.getId());
 					resultSearchBundle.putString("cityName", city.getName());
 
-
+					mDbHelper.close();
+					
 					FragmentHandler fragmentHandler = new FragmentHandler(getFragmentManager());
 
 					fragmentHandler.setFragment(FragmentKey.SEARCH_DEALS_LIST, resultSearchBundle);
