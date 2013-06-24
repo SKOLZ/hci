@@ -29,7 +29,7 @@
     <string name="luggage_door_change">Puerta de equipaje</string>
     <string name="hour_change">Horario de partida/arribo</string>
     <string name="flight_number_input">Nro de vuelo</string>
-    <string name="airline_input">Aerolinea</string>
+    <string name="airline_input">Aerolínea</string>
     <string name="add_to_my_flights">Añadir</string>
     <string name="flight_number">Nro de vuelo: </string>
     <string name="departure_city">Partida: </string>
@@ -47,8 +47,8 @@
     <string name="landed">Aterrizado</string>
     <string name="cancelled">Cancelado</string>
     <string name="unknown">Desconocido</string>
-    <string name="no_internet_connection">Fallo la conexión a internet</string>
-    <string name="invalid_airline">Aerolinea invalida</string>
+    <string name="no_internet_connection">Falló la conexión a internet</string>
+    <string name="invalid_airline">Aerolínea inválida</string>
     <string name="flight">Vuelo: </string>
     <string name="n_a">Sin Definir</string>
     <string name="details">Detalle</string>
@@ -56,7 +56,7 @@
     <string name="kindness_rating_text">Amabilidad:</string>
     <string name="punctuality_rating_text">Puntualidad:</string>
     <string name="millage_program_rating_text">Programa de millas:</string>
-    <string name="comfort_rating_text">Comfort:</string>
+    <string name="comfort_rating_text">Confort:</string>
     <string name="price_quality_relation_rating_text">Relación Precio-Calidad:</string>
     <string name="recommend_switch_text">Recomendado:</string>
     <string name="no">NO</string>

@@ -36,7 +36,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingRight="5sp"
-                    android:text="@string/departure_city" />
+                    android:text="@string/departure_city"
+                    android:textColor="#0C81C7" />
 
                 <TextView
                     android:id="@+id/arrival_text"
@@ -44,7 +45,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingRight="5sp"
-                    android:text="@string/arrival_city" />
+                    android:text="@string/arrival_city"
+                    android:textColor="#0C81C7" />
 
                 <TextView
                     android:id="@+id/departure_scheduled_text"
@@ -52,7 +54,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingRight="5sp"
-                    android:text="@string/departure_scheduled_time" />
+                    android:text="@string/departure_scheduled_time"
+                    android:textColor="#0C81C7" />
 
                 <TextView
                     android:id="@+id/arrival_scheduled_text"
@@ -60,7 +63,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingRight="5sp"
-                    android:text="@string/arrival_scheduled_time" />
+                    android:text="@string/arrival_scheduled_time"
+                    android:textColor="#0C81C7" />
 
                 <TextView
                     android:id="@+id/price_text"
@@ -68,7 +72,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingRight="5sp"
-                    android:text="@string/price" />
+                    android:text="@string/price"
+                    android:textColor="#0C81C7" />
             </LinearLayout>
 
             <LinearLayout
@@ -81,35 +86,40 @@
                     style="@android:style/TextAppearance.Small"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingRight="5sp" />
+                    android:paddingRight="5sp"
+                    android:textColor="#555" />
 
                 <TextView
                     android:id="@+id/to"
                     style="@android:style/TextAppearance.Small"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/from" />
+                    android:layout_below="@id/from"
+                    android:textColor="#555" />
 
                 <TextView
                     android:id="@+id/depDate"
                     style="@android:style/TextAppearance.Small"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/to" />
+                    android:layout_below="@id/to"
+                    android:textColor="#555" />
 
                 <TextView
                     android:id="@+id/retDate"
                     style="@android:style/TextAppearance.Small"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/depDate" />
+                    android:layout_below="@id/depDate"
+                    android:textColor="#555" />
 
                 <TextView
                     android:id="@+id/price"
                     style="@android:style/TextAppearance.Medium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/retDate" />
+                    android:layout_below="@id/retDate"
+                    android:textColor="#555" />
             </LinearLayout>
         </LinearLayout>
     </RelativeLayout>
@@ -123,6 +133,7 @@
             android:id="@+id/my_switch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#0C81C7"
             android:text="Agregar a mis ofertas"
             android:textOff="NO"
             android:textOn="YES" />

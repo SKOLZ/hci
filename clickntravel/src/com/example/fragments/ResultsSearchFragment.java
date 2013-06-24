@@ -26,6 +26,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
@@ -257,6 +258,10 @@ public class ResultsSearchFragment extends Fragment {
 			SimpleCursorAdapter Flights = new SimpleCursorAdapter(this.getActivity(), R.layout.dealresult, cursor, from, to);
 			mListView.setAdapter(Flights);
 
+			ImageView iv = (ImageView) view.findViewById(R.id.airline_image_deal);
+			
+			Log.d("puto", "" + iv);
+			
 			// Define the on-click listener for the list items
 			mListView.setOnItemClickListener(new OnItemClickListener() {
 
@@ -281,7 +286,7 @@ public class ResultsSearchFragment extends Fragment {
 				}
 			});
 			
-//			Log.d("tengo sueño", "" + view.findViewById(R.id.deals_list_view).);
+			Log.d("tengo sueño", "" + view.findViewById(R.id.deals_list_view));
 			
 //			Switch onOffSwitch = (Switch) mListView.findViewById(R.id.my_switch); 
 //			

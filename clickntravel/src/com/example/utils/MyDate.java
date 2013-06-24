@@ -15,6 +15,6 @@ public class MyDate {
 
 		String lan = Locale.getDefault().getLanguage();
 		
-		return ((lan == "en") ? (month + '/' + day) : (day + '/' + month)) + "/" + year + " " + hour + ":" + min;
+		return ((lan == "en") ? (month + '/' + day) : (day + '/' + month)) + "/" + year + " " + hour + ":" + min + " hs";
 	}
 }
