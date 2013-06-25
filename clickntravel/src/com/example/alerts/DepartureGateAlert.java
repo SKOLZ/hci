@@ -10,7 +10,7 @@ public class DepartureGateAlert extends Alert {
 	}
 
 	public AlertNotification getNotification(FlightStatus newStatus) {
-		return new AlertNotification(MainActivity.newDepartureGate + " " + newStatus.getDepartureGate());
+		return new AlertNotification(MainActivity.NEW_DEPARTURE_GATE + " " + newStatus.getDepartureGate());
 	}
 
 	public String getName() {

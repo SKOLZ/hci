@@ -10,7 +10,7 @@ public class ArrivalGateAlert extends Alert {
 	}
 
 	public AlertNotification getNotification(FlightStatus newStatus) {
-		return new AlertNotification(MainActivity.newArrivalGate + " "
+		return new AlertNotification(MainActivity.NEW_ARRIVAL_GATE + " "
 				+ newStatus.getArrivalGate());
 	}
 

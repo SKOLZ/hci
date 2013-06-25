@@ -11,7 +11,7 @@ public class StatusAlert extends Alert {
 		return !oldStatus.getStatus().equals(newStatus.getStatus());
 	}
 	public AlertNotification getNotification(FlightStatus newStatus) {
-		return new AlertNotification(MainActivity.newState + " " + newStatus.getStatus());
+		return new AlertNotification(MainActivity.NEW_STATE + " " + newStatus.getStatus());
 	}
 
 	public String getName() {

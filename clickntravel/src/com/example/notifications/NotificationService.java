@@ -19,13 +19,13 @@ import com.example.alerts.AlertNotification;
 import com.example.api.ApiIntent;
 import com.example.api.ApiResultReceiver;
 import com.example.api.Callback;
+import com.example.clickntravel.MainActivity;
 import com.example.utils.AddedFlight;
 import com.example.utils.FlightStatus;
 
 public class NotificationService extends IntentService {
 
 	private List<AddedFlight> flightList;
-	private ApiResultReceiver receiver;
 	private final String fileName = "addedFlightsStorage";
 	
 	public NotificationService() {
@@ -53,6 +53,7 @@ public class NotificationService extends IntentService {
 			// Por alguna razon no se llama a handleResponse (no funcionan las notificaciones)
 			public void handleResponse(JSONObject response) {
 				FlightStatus currentFlightStatus = null;
+				Log.d("FUNCIONOOO", "A TU CASA BABYFACEEEE");
 				try {
 					currentFlightStatus = new FlightStatus(response.getJSONObject("status"));
 				} catch (JSONException e) {
@@ -65,8 +66,8 @@ public class NotificationService extends IntentService {
 					n.notifyAlert();
 			}
 		};
-		receiver = new ApiResultReceiver(new Handler(), callback);
-		ApiIntent intent = new ApiIntent("GetFlightStatus", "Status", receiver, this);
+		ApiResultReceiver receiver = new ApiResultReceiver(new Handler(), callback);
+		ApiIntent intent = new ApiIntent("GetFlightStatus", "Status", receiver, MainActivity.MAIN_INSTANCE);
 		intent.setParams(flight.getParams());
 		startService(intent);
 	}

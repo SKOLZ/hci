@@ -10,7 +10,7 @@ public class ArrivalTimeAlert extends Alert {
 	}
 
 	public AlertNotification getNotification(FlightStatus newStatus) {
-		return new AlertNotification(MainActivity.newArrivalHour + " " + newStatus.getArrivalTime());
+		return new AlertNotification(MainActivity.NEW_ARRIVAL_HOUR + " " + newStatus.getArrivalTime());
 	}
 
 	public String getName() {

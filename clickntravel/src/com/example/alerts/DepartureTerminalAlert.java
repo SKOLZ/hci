@@ -10,7 +10,7 @@ public class DepartureTerminalAlert extends Alert {
 	}
 
 	public AlertNotification getNotification(FlightStatus newStatus) {
-		return new AlertNotification(MainActivity.newDepartureTerminal + " " + newStatus.getDepartureTerminal());
+		return new AlertNotification(MainActivity.NEW_DEPARTURE_TERMINAL + " " + newStatus.getDepartureTerminal());
 	}
 
 	public String getName() {

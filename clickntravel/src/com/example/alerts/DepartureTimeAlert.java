@@ -10,7 +10,7 @@ public class DepartureTimeAlert extends Alert {
 	}
 
 	public AlertNotification getNotification(FlightStatus newStatus) {
-		return new AlertNotification(MainActivity.newDepartureHour + " " + newStatus.getDepartureTime());
+		return new AlertNotification(MainActivity.NEW_DEPARTURE_HOUR + " " + newStatus.getDepartureTime());
 	}
 
 	public String getName() {

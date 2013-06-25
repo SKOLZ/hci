@@ -10,7 +10,7 @@ public class BaggageGateAlert extends Alert {
 	}
 
 	public AlertNotification getNotification(FlightStatus newStatus) {
-		return new AlertNotification(MainActivity.newBaggageGate + " " + newStatus.getBaggageGate());
+		return new AlertNotification(MainActivity.NEW_BAGGAGE_GATE + " " + newStatus.getBaggageGate());
 	}
 
 	public String getName() {

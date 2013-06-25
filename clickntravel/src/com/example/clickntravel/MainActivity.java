@@ -40,14 +40,16 @@ public class MainActivity extends FragmentActivity {
 	MenuItem seeComments;
 	MenuItem configuration;
 	
-	public static String newState;
-	public static String newDepartureHour;
-	public static String newDepartureTerminal;
-	public static String newDepartureGate;
-	public static String newBaggageGate;
-	public static String newArrivalHour;
-	public static String newArrivalTerminal;
-	public static String newArrivalGate;
+	public static String NEW_STATE;
+	public static String NEW_DEPARTURE_HOUR;
+	public static String NEW_DEPARTURE_TERMINAL;
+	public static String NEW_DEPARTURE_GATE;
+	public static String NEW_BAGGAGE_GATE;
+	public static String NEW_ARRIVAL_HOUR;
+	public static String NEW_ARRIVAL_TERMINAL;
+	public static String NEW_ARRIVAL_GATE;
+	public static MainActivity MAIN_INSTANCE;
+
 
 	@Override
 	public void onSaveInstanceState(Bundle outState) {
@@ -59,14 +61,15 @@ public class MainActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		newState = getString(R.string.new_status);
-		newDepartureHour = getString(R.string.new_departure_hour);
-		newDepartureTerminal = getString(R.string.new_departure_terminal);
-		newDepartureGate = getString(R.string.new_departure_gate);
-		newBaggageGate = getString(R.string.new_baggage_gate);
-		newArrivalHour = getString(R.string.new_arrival_hour);
-		newArrivalTerminal = getString(R.string.new_arrival_terminal);
-		newArrivalGate = getString(R.string.new_arrial_gate);
+		NEW_STATE = getString(R.string.new_status);
+		NEW_DEPARTURE_HOUR = getString(R.string.new_departure_hour);
+		NEW_DEPARTURE_TERMINAL = getString(R.string.new_departure_terminal);
+		NEW_DEPARTURE_GATE = getString(R.string.new_departure_gate);
+		NEW_BAGGAGE_GATE = getString(R.string.new_baggage_gate);
+		NEW_ARRIVAL_HOUR = getString(R.string.new_arrival_hour);
+		NEW_ARRIVAL_TERMINAL = getString(R.string.new_arrival_terminal);
+		NEW_ARRIVAL_GATE = getString(R.string.new_arrial_gate);
+		MAIN_INSTANCE = this;
 		
 		Alert.CONTEXT = this;
 		Alert.refreshAlerts();
