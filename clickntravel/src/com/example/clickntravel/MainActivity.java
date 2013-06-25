@@ -22,7 +22,6 @@ import com.example.fragments.AddCommentFragment;
 import com.example.fragments.ConfigurationFragment;
 import com.example.fragments.FlightInfoFragment;
 import com.example.fragments.FlightListFragment;
-import com.example.fragments.MainFragment;
 import com.example.fragments.MyFlightsFragment;
 import com.example.handlers.FragmentHandler;
 import com.example.notifications.NotificationIntent;
@@ -48,7 +47,6 @@ public class MainActivity extends FragmentActivity {
 	public static String NEW_ARRIVAL_HOUR;
 	public static String NEW_ARRIVAL_TERMINAL;
 	public static String NEW_ARRIVAL_GATE;
-	public static MainActivity MAIN_INSTANCE;
 
 
 	@Override
@@ -69,7 +67,6 @@ public class MainActivity extends FragmentActivity {
 		NEW_ARRIVAL_HOUR = getString(R.string.new_arrival_hour);
 		NEW_ARRIVAL_TERMINAL = getString(R.string.new_arrival_terminal);
 		NEW_ARRIVAL_GATE = getString(R.string.new_arrial_gate);
-		MAIN_INSTANCE = this;
 		
 		Alert.CONTEXT = this;
 		Alert.refreshAlerts();

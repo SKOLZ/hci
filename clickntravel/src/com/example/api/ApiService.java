@@ -68,7 +68,9 @@ public class ApiService extends IntentService{
 		final String jsonToParse = EntityUtils.toString(response.getEntity());
 
 		b.putSerializable("return", (Serializable) jsonToParse);
-
+		
+		Log.d("cacona", "" + receiver);
+		
 		receiver.send(STATUS_OK, b);
 	}
 

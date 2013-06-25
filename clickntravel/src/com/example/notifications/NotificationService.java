@@ -14,12 +14,10 @@ import android.content.SharedPreferences;
 import android.os.Handler;
 import android.util.Log;
 
-import com.example.alerts.Alert;
 import com.example.alerts.AlertNotification;
 import com.example.api.ApiIntent;
 import com.example.api.ApiResultReceiver;
 import com.example.api.Callback;
-import com.example.clickntravel.MainActivity;
 import com.example.utils.AddedFlight;
 import com.example.utils.FlightStatus;
 
@@ -35,7 +33,7 @@ public class NotificationService extends IntentService {
 	@Override
 	protected void onHandleIntent(Intent arg0) {
 		while (true) {
-			try { Thread.sleep(Alert.frequency *1000); }
+			try { Thread.sleep(/*Alert.frequency*/7 *1000); }
 			catch(InterruptedException e){ }
 			try { retrieveData(); } 
 			catch(JSONException e){ }
@@ -51,9 +49,9 @@ public class NotificationService extends IntentService {
 		Callback callback = new Callback() {
 			
 			// Por alguna razon no se llama a handleResponse (no funcionan las notificaciones)
+			// Solo si se lanza desde dentro de este service...
 			public void handleResponse(JSONObject response) {
 				FlightStatus currentFlightStatus = null;
-				Log.d("FUNCIONOOO", "A TU CASA BABYFACEEEE");
 				try {
 					currentFlightStatus = new FlightStatus(response.getJSONObject("status"));
 				} catch (JSONException e) {
@@ -67,7 +65,8 @@ public class NotificationService extends IntentService {
 			}
 		};
 		ApiResultReceiver receiver = new ApiResultReceiver(new Handler(), callback);
-		ApiIntent intent = new ApiIntent("GetFlightStatus", "Status", receiver, MainActivity.MAIN_INSTANCE);
+		
+		ApiIntent intent = new ApiIntent("GetFlightStatus", "Status", receiver, this);
 		intent.setParams(flight.getParams());
 		startService(intent);
 	}
