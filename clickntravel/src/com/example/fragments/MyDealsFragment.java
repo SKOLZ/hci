@@ -5,6 +5,7 @@ import java.util.Set;
 
 import android.app.ActionBar;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -113,6 +114,17 @@ public class MyDealsFragment extends Fragment {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 
+				int color_on_selected = Color.rgb(204, 204, 204);
+				
+				view.setBackgroundColor(color_on_selected);
+				
+				for(int i = 0; i < ((ViewGroup)view).getChildCount(); i++) {
+				   
+					View nextChild = ((ViewGroup)view).getChildAt(i);
+				    			    
+				    nextChild.setBackgroundColor(color_on_selected);
+				}
+				
 				// Get the cursor, positioned to the corresponding row in
 				// the result set
 				Cursor cursor = (Cursor) mListView.getItemAtPosition(position);
@@ -133,15 +145,6 @@ public class MyDealsFragment extends Fragment {
 
 				Deal newDeal = new Deal(from, to, depDate, retDate, price,
 						airlineId);
-
-				mDbHelper.open();
-
-				Log.d("dealaborrar", newDeal.toString());
-
-				for (Deal d : dealsList) {
-
-					Log.d("deal", d.toString());
-				}
 
 				dealsList.remove(newDeal);
 			}

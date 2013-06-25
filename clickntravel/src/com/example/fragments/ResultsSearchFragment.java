@@ -14,13 +14,13 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.R.integer;
 import android.app.ActionBar;
-import android.app.Dialog;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -290,6 +290,8 @@ public class ResultsSearchFragment extends Fragment {
 					this.getActivity(), R.layout.dealresult, cursor, from, to);
 			mListView.setAdapter(Flights);
 
+		
+			
 			// Define the on-click listener for the list items
 			mListView.setOnItemClickListener(new OnItemClickListener() {
 
@@ -297,6 +299,17 @@ public class ResultsSearchFragment extends Fragment {
 				public void onItemClick(AdapterView<?> parent, View view,
 						int position, long id) {
 
+					int color_on_selected = Color.rgb(172, 211, 233);
+					
+					view.setBackgroundColor(color_on_selected);
+					
+					for(int i = 0; i < ((ViewGroup)view).getChildCount(); i++) {
+					   
+						View nextChild = ((ViewGroup)view).getChildAt(i);
+					    			    
+					    nextChild.setBackgroundColor(color_on_selected);
+					}
+					
 					// Get the cursor, positioned to the corresponding row in
 					// the result set
 					Cursor cursor = (Cursor) mListView
