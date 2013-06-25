@@ -67,15 +67,21 @@
     <string name="get_fligh_error">Invalid flight</string>
     <string name="already_added">Flight already added</string>
     <string name="see_comments">Comments</string>
-	<string name="comment_added">Comment added</string>
-	<string name="saving_changes">Saving changes</string>
-	
+    <string name="comment_added">Comment added</string>
+    <string name="saving_changes">Saving changes</string>
+    <string name="new_status">The new status is:</string>
+    <string name="new_departure_hour">The new departure hour is:</string>
+    <string name="new_departure_terminal">The new departure terminal is:</string>
+    <string name="new_departure_gate">The new departure gate is:</string>
+    <string name="new_baggage_gate">The new luggage door is:</string>
+    <string name="new_arrival_hour">The new arrival hour is:</string>
+    <string name="new_arrival_terminal">The new arrival terminal is:</string>
+    <string name="new_arrial_gate">The new arrival gate is:</string>
     <string name="main_button_resultssearch">Deal Results</string>
     <string name="search_view_text">Search deals by destination</string>
-    <string name="deal">Deal: </string>  
-    <string name="price">Price: </string>     
-    
+    <string name="deal">Deal: </string>
+    <string name="price">Price: </string>
     <string name="no_deals">No deals to show</string>
     <string name="no_deals_found">There are no deals for the chosen destination</string>
-    
+
 </resources>

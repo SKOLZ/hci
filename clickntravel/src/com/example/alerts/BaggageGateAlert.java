@@ -1,5 +1,6 @@
 package com.example.alerts;
 
+import com.example.clickntravel.MainActivity;
 import com.example.utils.FlightStatus;
 
 public class BaggageGateAlert extends Alert {
@@ -9,7 +10,7 @@ public class BaggageGateAlert extends Alert {
 	}
 
 	public AlertNotification getNotification(FlightStatus newStatus) {
-		return new AlertNotification("La nueva puerta de recolección de equipaje es: " + newStatus.getBaggageGate());
+		return new AlertNotification(MainActivity.newBaggageGate + " " + newStatus.getBaggageGate());
 	}
 
 	public String getName() {

@@ -1,5 +1,6 @@
 package com.example.alerts;
 
+import com.example.clickntravel.MainActivity;
 import com.example.utils.FlightStatus;
 
 public class DepartureGateAlert extends Alert {
@@ -9,9 +10,9 @@ public class DepartureGateAlert extends Alert {
 	}
 
 	public AlertNotification getNotification(FlightStatus newStatus) {
-		return new AlertNotification("La nueva puerta de embarque es: " + newStatus.getDepartureGate());
+		return new AlertNotification(MainActivity.newDepartureGate + " " + newStatus.getDepartureGate());
 	}
-	
+
 	public String getName() {
 		return "DepartureGate";
 	}

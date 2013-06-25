@@ -1,5 +1,6 @@
 package com.example.alerts;
 
+import com.example.clickntravel.MainActivity;
 import com.example.utils.FlightStatus;
 
 public class ArrivalTerminalAlert extends Alert {
@@ -9,9 +10,9 @@ public class ArrivalTerminalAlert extends Alert {
 	}
 
 	public AlertNotification getNotification(FlightStatus newStatus) {
-		return new AlertNotification("La nueva terminal es la: " + newStatus.getArrivalTerminal());
+		return new AlertNotification(MainActivity.newArrivalTerminal + " " + newStatus.getArrivalTerminal());
 	}
-	
+
 	public String getName() {
 		return "ArrivalTerminal";
 	}

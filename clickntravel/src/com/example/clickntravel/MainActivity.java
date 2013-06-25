@@ -39,6 +39,15 @@ public class MainActivity extends FragmentActivity {
 	MenuItem comment;
 	MenuItem seeComments;
 	MenuItem configuration;
+	
+	public static String newState;
+	public static String newDepartureHour;
+	public static String newDepartureTerminal;
+	public static String newDepartureGate;
+	public static String newBaggageGate;
+	public static String newArrivalHour;
+	public static String newArrivalTerminal;
+	public static String newArrivalGate;
 
 	@Override
 	public void onSaveInstanceState(Bundle outState) {
@@ -50,6 +59,15 @@ public class MainActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
+		newState = getString(R.string.new_status);
+		newDepartureHour = getString(R.string.new_departure_hour);
+		newDepartureTerminal = getString(R.string.new_departure_terminal);
+		newDepartureGate = getString(R.string.new_departure_gate);
+		newBaggageGate = getString(R.string.new_baggage_gate);
+		newArrivalHour = getString(R.string.new_arrival_hour);
+		newArrivalTerminal = getString(R.string.new_arrival_terminal);
+		newArrivalGate = getString(R.string.new_arrial_gate);
+		
 		Alert.CONTEXT = this;
 		Alert.refreshAlerts();
 		PreferenceManager

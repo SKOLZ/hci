@@ -1,5 +1,6 @@
 package com.example.alerts;
 
+import com.example.clickntravel.MainActivity;
 import com.example.utils.FlightStatus;
 
 public class DepartureTimeAlert extends Alert {
@@ -9,7 +10,7 @@ public class DepartureTimeAlert extends Alert {
 	}
 
 	public AlertNotification getNotification(FlightStatus newStatus) {
-		return new AlertNotification("El nuevo horario de salida es: " + newStatus.getDepartureTime());
+		return new AlertNotification(MainActivity.newDepartureHour + " " + newStatus.getDepartureTime());
 	}
 
 	public String getName() {
