@@ -182,7 +182,7 @@ public class ResultsSearchFragment extends Fragment {
 							
 							mDbHelper.createFlights(curr.getPrice(),
 									curr.getNameFrom(), curr.getNameTo(),
-									curr.getDepTime(), curr.getArrivalTime());
+									curr.getDepTime(), curr.getArrivalTime(), curr.getAirlineId());
 							
 						} catch (JSONException e) {	}
 					}
@@ -248,19 +248,20 @@ public class ResultsSearchFragment extends Fragment {
 			// Specify the columns we want to display in the result
 			String[] from = new String[] { FlightsDbAdapter.KEY_PRICE,
 					FlightsDbAdapter.KEY_FROM, FlightsDbAdapter.KEY_TO,
-					FlightsDbAdapter.KEY_DEPDATE, FlightsDbAdapter.KEY_RETDATE };
+					FlightsDbAdapter.KEY_DEPDATE, FlightsDbAdapter.KEY_RETDATE, FlightsDbAdapter.KEY_IMG };
 
 			// Specify the Corresponding layout elements where we want the columns to go
-			int[] to = new int[] { R.id.price, R.id.from, R.id.to, R.id.depDate, R.id.retDate };
+			int[] to = new int[] { R.id.price, R.id.from, R.id.to, R.id.depDate, R.id.retDate, R.id.airline_image_deal };
 
 			// Create a simple cursor adapter for the definitions and apply them to the ListView
 			@SuppressWarnings("deprecation")
 			SimpleCursorAdapter Flights = new SimpleCursorAdapter(this.getActivity(), R.layout.dealresult, cursor, from, to);
 			mListView.setAdapter(Flights);
-
-			ImageView iv = (ImageView) view.findViewById(R.id.airline_image_deal);
-			
-			Log.d("puto", "" + iv);
+//
+//			Cursor cursor1 = (Cursor) mListView.getItemAtPosition(0);
+//			ImageView iv = (ImageView) ((View) cursor1).findViewById(R.id.airline_image_deal);
+//			
+//			Log.d("putobla", "" + iv);
 			
 			// Define the on-click listener for the list items
 			mListView.setOnItemClickListener(new OnItemClickListener() {

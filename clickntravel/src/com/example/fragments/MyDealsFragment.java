@@ -58,21 +58,21 @@ public class MyDealsFragment extends Fragment {
 		mDbHelper.deleteAllFlights();
 
 		if (dealsList.isEmpty()) {
-			
+
 			Toast toast = Toast.makeText(getActivity(), R.string.no_deals,
 					Toast.LENGTH_LONG);
-			
+
 			toast.setGravity(Gravity.CENTER, 0, 0);
 			toast.show();
-			
+
 			return view;
 		}
-		
-		for (Deal curr : dealsList)
-			mDbHelper.createFlights(curr.getPrice(), curr.getNameFrom(),
-					curr.getNameTo(), curr.getDepTime(), curr.getArrivalTime());
 
-		showResults();
+		for (Deal curr : dealsList)
+			// mDbHelper.createFlights(curr.getPrice(), curr.getNameFrom(),
+			// curr.getNameTo(), curr.getDepTime(), curr.getArrivalTime());
+
+			showResults();
 
 		return view;
 	}
@@ -82,19 +82,20 @@ public class MyDealsFragment extends Fragment {
 		Cursor cursor = mDbHelper.searchFlights();
 
 		if (cursor == null) {
-			
+
 			return;
 		}
 
 		// Specify the columns we want to display in the result
 		String[] from = new String[] { FlightsDbAdapter.KEY_PRICE,
 				FlightsDbAdapter.KEY_FROM, FlightsDbAdapter.KEY_TO,
-				FlightsDbAdapter.KEY_DEPDATE, FlightsDbAdapter.KEY_RETDATE };
+				FlightsDbAdapter.KEY_DEPDATE, FlightsDbAdapter.KEY_RETDATE,
+				FlightsDbAdapter.KEY_IMG };
 
-		// Specify the Corresponding layout elements where we want the
-		// columns to go
+		// Specify the Corresponding layout elements where we want the columns
+		// to go
 		int[] to = new int[] { R.id.price, R.id.from, R.id.to, R.id.depDate,
-				R.id.retDate };
+				R.id.retDate, R.id.airline_image_deal };
 
 		// Create a simple cursor adapter for the definitions and apply them
 		// to the ListView
@@ -127,6 +128,7 @@ public class MyDealsFragment extends Fragment {
 						.getColumnIndexOrThrow("zipCode"));
 
 				Deal newDeal = new Deal(from, to, depDate, retDate, price);
+				
 				dealsList.remove(newDeal);
 			}
 		});
