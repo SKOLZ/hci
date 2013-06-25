@@ -64,7 +64,8 @@
     <string name="comment_text">Comentar</string>
     <string name="see_comments">Comentarios</string>
 	<string name="comment_added">Comentario agregado</string>
-
+	<string name="saving_changes">Guardando cambios</string>
+	
     
     <string name="main_button_resultssearch">Resultados de ofertas</string>
     <string name="search_view_text">Buscar ofertas por destino</string>
