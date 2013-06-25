@@ -18,6 +18,7 @@ public class StatusAlert extends Alert {
 	public String getName() {
 		return name;
 	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -25,6 +26,7 @@ public class StatusAlert extends Alert {
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

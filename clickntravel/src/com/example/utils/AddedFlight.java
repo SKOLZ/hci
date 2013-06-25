@@ -9,6 +9,8 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.util.Log;
+
 import com.example.alerts.Alert;
 import com.example.alerts.AlertNotification;
 
@@ -104,9 +106,12 @@ public class AddedFlight{
 	
 	public List<AlertNotification> check(FlightStatus newStatus) {
 		List<AlertNotification> notifications = new LinkedList<AlertNotification>();
+		Log.d("Alert", (Alert.activeAlerts) + "");
 		for (Alert a : Alert.activeAlerts.keySet()) {
-			if (Alert.activeAlerts.get(a) /*&& a.changedStatus(status, newStatus)*/)
-				notifications.add(a.getNotification(newStatus));
+			//if (Alert.activeAlerts.get(a)/*&& a.changedStatus(status, newStatus)*/) {
+				//notifications.add(a.getNotification(newStatus));
+			//}
+			Log.d("forEach", "entre...");
 		}
 		return notifications;
 	}
