@@ -33,5 +33,8 @@ public abstract class Alert {
 		activeAlerts.put(new StatusAlert(), preferencesMap.get("statusChange"));
 		frequency = Long.parseLong(PreferenceManager.getDefaultSharedPreferences(CONTEXT).getString("notificationFrequency", "300")) *60;
 	}
+
+	public abstract boolean equals(Object obj);
 	
+	public abstract int hashCode();
 }
