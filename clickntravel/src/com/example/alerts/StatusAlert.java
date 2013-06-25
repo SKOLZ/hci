@@ -1,7 +1,6 @@
 package com.example.alerts;
 
 import com.example.clickntravel.MainActivity;
-import com.example.clickntravel.R;
 import com.example.utils.FlightStatus;
 
 public class StatusAlert extends Alert {

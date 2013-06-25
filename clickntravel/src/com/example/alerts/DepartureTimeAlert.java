@@ -4,6 +4,8 @@ import com.example.clickntravel.MainActivity;
 import com.example.utils.FlightStatus;
 
 public class DepartureTimeAlert extends Alert {
+	
+	private String name;
 
 	public boolean changedStatus(FlightStatus oldStatus, FlightStatus newStatus) {
 		return !oldStatus.getDepartureTime().equals(newStatus.getDepartureTime());

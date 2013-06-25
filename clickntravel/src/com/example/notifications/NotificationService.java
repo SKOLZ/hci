@@ -64,7 +64,8 @@ public class NotificationService extends IntentService {
 					n.notifyAlert();
 			}
 		};
-		ApiResultReceiver receiver = new ApiResultReceiver(new Handler(), callback);
+		//ApiResultReceiver receiver = new ApiResultReceiver(new Handler(), callback);
+		ApiResultReceiver receiver = new ApiResultReceiver(null, callback);
 		
 		ApiIntent intent = new ApiIntent("GetFlightStatus", "Status", receiver, this);
 		intent.setParams(flight.getParams());
