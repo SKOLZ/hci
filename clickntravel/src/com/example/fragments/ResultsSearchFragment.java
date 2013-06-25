@@ -301,22 +301,6 @@ public class ResultsSearchFragment extends Fragment {
 				public void onItemClick(AdapterView<?> parent, View view,
 						int position, long id) {
 
-					int color_on_selected = Color.rgb(172, 211, 233);
-					
-					view.setBackgroundColor(color_on_selected);
-					
-					for(int i = 0; i < ((ViewGroup)view).getChildCount(); i++) {
-					   
-						View nextChild = ((ViewGroup)view).getChildAt(i);
-					    			    
-					    nextChild.setBackgroundColor(color_on_selected);
-					}
-					
-					ImageView button_switch = (ImageView) view.findViewById(R.id.button_switch);
-					Drawable image = getResources().getDrawable(R.drawable.yes);
-					
-					button_switch.setImageDrawable(image);
-					
 					// Get the cursor, positioned to the corresponding row in
 					// the result set
 					Cursor cursor = (Cursor) mListView
@@ -337,8 +321,34 @@ public class ResultsSearchFragment extends Fragment {
 							.getColumnIndexOrThrow("img"));
 
 					Deal newDeal = new Deal(from, to, depDate, retDate, price, airlineId);
-
-					MyDealsFragment.dealsList.add(newDeal);
+					
+					ImageView button_switch = (ImageView) view.findViewById(R.id.button_switch);
+					Drawable image = getResources().getDrawable(R.drawable.yes);
+					
+					int color_on_selected;
+					
+					if (!MyDealsFragment.dealsList.contains(newDeal)) { 
+					
+						color_on_selected = Color.rgb(172, 211, 233);
+						MyDealsFragment.dealsList.add(newDeal);
+					
+					} else {
+					
+						image = getResources().getDrawable(R.drawable.no);
+						color_on_selected = Color.rgb(204, 204, 204);
+						MyDealsFragment.dealsList.remove(newDeal);
+					}
+			
+					view.setBackgroundColor(color_on_selected);
+					
+					for(int i = 0; i < ((ViewGroup)view).getChildCount(); i++) {
+					   
+						View nextChild = ((ViewGroup)view).getChildAt(i);
+					    			    
+					    nextChild.setBackgroundColor(color_on_selected);
+					}
+					
+					button_switch.setImageDrawable(image);
 				}
 			});
 		}
