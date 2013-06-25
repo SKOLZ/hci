@@ -74,6 +74,15 @@
                     android:paddingRight="5sp"
                     android:text="@string/price"
                     android:textColor="#0C81C7" />
+
+                <TextView
+                    android:id="@+id/add_deal_text"
+                    style="@android:style/TextAppearance.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="5sp"
+                    android:text="@string/add_deal_text"
+                    android:textColor="#0C81C7" />
             </LinearLayout>
 
             <LinearLayout
@@ -120,15 +129,13 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/retDate"
                     android:textColor="#555" />
+
+                <ImageView
+                    android:id="@+id/button_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/no" />
             </LinearLayout>
         </LinearLayout>
     </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/relativeLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
-    </RelativeLayout>
-
 </LinearLayout>

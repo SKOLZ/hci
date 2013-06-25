@@ -83,5 +83,7 @@
     <string name="price">Price: </string>
     <string name="no_deals">No deals to show</string>
     <string name="no_deals_found">There are no deals for the chosen destination</string>
+    
+    <string name="add_deal_text">Add deal</string>
 
 </resources>

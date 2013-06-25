@@ -6,6 +6,7 @@ import java.util.Set;
 import android.app.ActionBar;
 import android.database.Cursor;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -15,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
@@ -104,7 +106,7 @@ public class MyDealsFragment extends Fragment {
 		// to the ListView
 		@SuppressWarnings("deprecation")
 		SimpleCursorAdapter Flights = new SimpleCursorAdapter(
-				this.getActivity(), R.layout.dealresult, cursor, from, to);
+				this.getActivity(), R.layout.mydealresult, cursor, from, to);
 		mListView.setAdapter(Flights);
 
 		// Define the on-click listener for the list items
@@ -124,6 +126,11 @@ public class MyDealsFragment extends Fragment {
 				    			    
 				    nextChild.setBackgroundColor(color_on_selected);
 				}
+				
+				ImageView button_switch = (ImageView) view.findViewById(R.id.button_switch);
+				Drawable image = getResources().getDrawable(R.drawable.no);
+				
+				button_switch.setImageDrawable(image);
 				
 				// Get the cursor, positioned to the corresponding row in
 				// the result set

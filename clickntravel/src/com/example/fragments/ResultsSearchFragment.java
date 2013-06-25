@@ -14,19 +14,21 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.R.integer;
 import android.app.ActionBar;
 import android.database.Cursor;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
@@ -83,9 +85,9 @@ public class ResultsSearchFragment extends Fragment {
 		setHasOptionsMenu(true);
 
 		mDbHelper = new FlightsDbAdapter(this.getActivity());
-		
+
 		mDbHelper = mDbHelper.open();
-		
+
 		mDbHelper.deleteAllFlights();
 
 		return view;
@@ -309,6 +311,11 @@ public class ResultsSearchFragment extends Fragment {
 					    			    
 					    nextChild.setBackgroundColor(color_on_selected);
 					}
+					
+					ImageView button_switch = (ImageView) view.findViewById(R.id.button_switch);
+					Drawable image = getResources().getDrawable(R.drawable.yes);
+					
+					button_switch.setImageDrawable(image);
 					
 					// Get the cursor, positioned to the corresponding row in
 					// the result set

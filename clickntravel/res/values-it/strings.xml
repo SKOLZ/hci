@@ -73,4 +73,5 @@
     <string name="no_deals">Nessuna offerta aggiunta</string>
     <string name="no_deals_found">Non ci sono offerte disponibili per la destinazione scelta</string>
     
+    <string name="add_deal_text">Aggiungere offerta</string>
 </resources>
