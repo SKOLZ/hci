@@ -11,9 +11,9 @@ import android.app.IntentService;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Handler;
 import android.util.Log;
 
+import com.example.alerts.Alert;
 import com.example.alerts.AlertNotification;
 import com.example.api.ApiIntent;
 import com.example.api.ApiResultReceiver;
@@ -33,7 +33,7 @@ public class NotificationService extends IntentService {
 	@Override
 	protected void onHandleIntent(Intent arg0) {
 		while (true) {
-			try { Thread.sleep(/*Alert.frequency*/7 *1000); }
+			try { Thread.sleep(/*Alert.frequency*/Alert.frequency *1000); }
 			catch(InterruptedException e){ }
 			try { retrieveData(); } 
 			catch(JSONException e){ }
@@ -58,8 +58,11 @@ public class NotificationService extends IntentService {
 					Log.d("json", "invalid status");
 				}
 				List<AlertNotification> notifs = flight.check(currentFlightStatus);
-				if (notifs.isEmpty())
+				if (notifs.isEmpty()) {
 					Log.d("notif", "no hay notifs" + flight.getFlightNumber());
+				} else {
+					Log.d("else notif", "hay notifs" + flight.getFlightNumber());
+				}
 				for (AlertNotification n : notifs)
 					n.notifyAlert();
 			}

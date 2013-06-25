@@ -108,10 +108,9 @@ public class AddedFlight{
 		List<AlertNotification> notifications = new LinkedList<AlertNotification>();
 		Log.d("Alert", (Alert.activeAlerts) + "");
 		for (Alert a : Alert.activeAlerts.keySet()) {
-			//if (Alert.activeAlerts.get(a)/*&& a.changedStatus(status, newStatus)*/) {
-				//notifications.add(a.getNotification(newStatus));
-			//}
-			Log.d("forEach", "entre...");
+			if (Alert.activeAlerts.get(a) && a.changedStatus(status, newStatus)) {
+				notifications.add(a.getNotification(newStatus));
+			}
 		}
 		return notifications;
 	}
