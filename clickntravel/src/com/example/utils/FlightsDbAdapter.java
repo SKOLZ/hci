@@ -13,11 +13,11 @@ import com.example.handlers.ImageHandler;
 public class FlightsDbAdapter {
 
 	public static final String KEY_ROWID = "rowid";
-	public static final String KEY_PRICE = "Flight";
-	public static final String KEY_FROM = "name";
-	public static final String KEY_TO = "city";
-	public static final String KEY_DEPDATE = "state";
-	public static final String KEY_RETDATE = "zipCode";
+	public static final String KEY_PRICE = "price";
+	public static final String KEY_FROM = "fromCity";
+	public static final String KEY_TO = "toCity";
+	public static final String KEY_DEPDATE = "depDate";
+	public static final String KEY_RETDATE = "retDate";
 	public static final String KEY_IMG = "img";
 	public static final String KEY_SEARCH = "searchData";
 
@@ -26,8 +26,8 @@ public class FlightsDbAdapter {
 	private DatabaseHelper mDbHelper;
 	private SQLiteDatabase mDb;
 
-	private static final String DATABASE_FROM = "FlightData";
-	private static final String FTS_VIRTUAL_TABLE = "FlightInfo";
+	private static final String DATABASE_FROM = "database_from";
+	private static final String FTS_VIRTUAL_TABLE = "info_table";
 	private static final int DATABASE_VERSION = 1;
 
 	// Create a FTS3 Virtual Table for fast searches
@@ -103,9 +103,18 @@ public class FlightsDbAdapter {
 		initialValues.put(KEY_DEPDATE, depDate);
 		initialValues.put(KEY_RETDATE, retDate);
 
+		Log.d("idairline", airlineId);
+
 		if (!airlineId.equals("")) {
 
-			initialValues.put(KEY_IMG, imageHandler.getImage(airlineId));
+			if (airlineId.length() == 2) {
+
+				initialValues.put(KEY_IMG, imageHandler.getImage(airlineId));
+
+			} else {
+
+				initialValues.put(KEY_IMG, airlineId);
+			}
 
 		} else {
 
@@ -113,6 +122,13 @@ public class FlightsDbAdapter {
 		}
 
 		initialValues.put(KEY_SEARCH, searchValue);
+
+		if (mDb == null) {
+
+			Log.d("nulll", "fuck");
+
+			open();
+		}
 
 		return mDb.insert(FTS_VIRTUAL_TABLE, null, initialValues);
 	}

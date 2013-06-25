@@ -78,10 +78,10 @@ public class MainActivity extends FragmentActivity {
 
 	public void closeDB() {
 	
-		if (MainFragment.mDbHelper != null) {
-			
-			MainFragment.mDbHelper.close();
-		}
+//		if (MainFragment.mDbHelper != null) {
+//			
+//			MainFragment.mDbHelper.close();
+//		}
 	}
 	
 	public void onClickMyFlights(View view) {

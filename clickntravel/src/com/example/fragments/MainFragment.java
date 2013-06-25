@@ -74,7 +74,8 @@ public class MainFragment extends Fragment implements
 		setHasOptionsMenu(true);
 
 		mDbHelper = new FlightsDbAdapter(this.getActivity());
-		mDbHelper.open();
+		
+		mDbHelper = mDbHelper.open();
 
 		mDbHelper.deleteAllFlights();
 
@@ -195,15 +196,13 @@ public class MainFragment extends Fragment implements
 					Cursor cursor = (Cursor) mListView.getItemAtPosition(position);
 					
 					// Get the city from this row in the database
-					String name = cursor.getString(cursor.getColumnIndexOrThrow("city"));
+					String name = cursor.getString(cursor.getColumnIndexOrThrow("toCity"));
 
 					City city = citiesMap.get(name);
 
 					Bundle resultSearchBundle = new Bundle();
 					resultSearchBundle.putString("cityId", city.getId());
 					resultSearchBundle.putString("cityName", city.getName());
-
-					mDbHelper.close();
 					
 					FragmentHandler fragmentHandler = new FragmentHandler(getFragmentManager());
 

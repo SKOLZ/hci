@@ -7,6 +7,7 @@ import android.app.ActionBar;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,10 +19,8 @@ import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
 import com.example.clickntravel.R;
-import com.example.handlers.FragmentHandler;
 import com.example.utils.Deal;
 import com.example.utils.FlightsDbAdapter;
-import com.example.utils.FragmentKey;
 
 public class MyDealsFragment extends Fragment {
 
@@ -54,8 +53,19 @@ public class MyDealsFragment extends Fragment {
 		mListView = (ListView) view.findViewById(R.id.my_deals_list_view);
 
 		mDbHelper = new FlightsDbAdapter(this.getActivity());
-		mDbHelper.open();
+
+		mDbHelper = mDbHelper.open();
+
 		mDbHelper.deleteAllFlights();
+
+		for (Deal curr : dealsList) {
+
+			mDbHelper.createFlights(curr.getPrice(), curr.getNameFrom(),
+					curr.getNameTo(), curr.getDepTime(), curr.getArrivalTime(),
+					curr.getAirlineId());
+		}
+
+		showResults();
 
 		if (dealsList.isEmpty()) {
 
@@ -64,15 +74,7 @@ public class MyDealsFragment extends Fragment {
 
 			toast.setGravity(Gravity.CENTER, 0, 0);
 			toast.show();
-
-			return view;
 		}
-
-		for (Deal curr : dealsList)
-			// mDbHelper.createFlights(curr.getPrice(), curr.getNameFrom(),
-			// curr.getNameTo(), curr.getDepTime(), curr.getArrivalTime());
-
-			showResults();
 
 		return view;
 	}
@@ -117,18 +119,30 @@ public class MyDealsFragment extends Fragment {
 
 				// Get the city from this row in the database
 				String price = cursor.getString(cursor
-						.getColumnIndexOrThrow("customer"));
+						.getColumnIndexOrThrow("price"));
 				String from = cursor.getString(cursor
-						.getColumnIndexOrThrow("name"));
+						.getColumnIndexOrThrow("fromCity"));
 				String to = cursor.getString(cursor
-						.getColumnIndexOrThrow("city"));
+						.getColumnIndexOrThrow("toCity"));
 				String depDate = cursor.getString(cursor
-						.getColumnIndexOrThrow("state"));
+						.getColumnIndexOrThrow("depDate"));
 				String retDate = cursor.getString(cursor
-						.getColumnIndexOrThrow("zipCode"));
+						.getColumnIndexOrThrow("retDate"));
+				String airlineId = cursor.getString(cursor
+						.getColumnIndexOrThrow("img"));
 
-				Deal newDeal = new Deal(from, to, depDate, retDate, price);
-				
+				Deal newDeal = new Deal(from, to, depDate, retDate, price,
+						airlineId);
+
+				mDbHelper.open();
+
+				Log.d("dealaborrar", newDeal.toString());
+
+				for (Deal d : dealsList) {
+
+					Log.d("deal", d.toString());
+				}
+
 				dealsList.remove(newDeal);
 			}
 		});
