@@ -22,7 +22,6 @@ public abstract class Alert {
 	
 	@SuppressWarnings("unchecked")
 	public static void refreshAlerts() {
-		//Map<String, Boolean> preferencesMap = (Map<String,Boolean>) PreferenceManager.getDefaultSharedPreferences(CONTEXT).getAll();
 		activeAlerts.put(new BaggageGateAlert(), PreferenceManager.getDefaultSharedPreferences(CONTEXT).getBoolean("lugggageDoorChange", false));
 		activeAlerts.put(new ArrivalGateAlert(), PreferenceManager.getDefaultSharedPreferences(CONTEXT).getBoolean("doorChange", false));
 		activeAlerts.put(new DepartureGateAlert(), PreferenceManager.getDefaultSharedPreferences(CONTEXT).getBoolean("doorChange", false));
@@ -31,13 +30,6 @@ public abstract class Alert {
 		activeAlerts.put(new ArrivalTimeAlert(), PreferenceManager.getDefaultSharedPreferences(CONTEXT).getBoolean("hourChange", false));
 		activeAlerts.put(new DepartureTimeAlert(), PreferenceManager.getDefaultSharedPreferences(CONTEXT).getBoolean("hourChange", false));
 		activeAlerts.put(new StatusAlert(), PreferenceManager.getDefaultSharedPreferences(CONTEXT).getBoolean("statusChange", false));
-		/*activeAlerts.put(new ArrivalGateAlert(), preferencesMap.get("doorChange"));
-		activeAlerts.put(new DepartureGateAlert(), preferencesMap.get("doorChange"));
-		activeAlerts.put(new ArrivalTerminalAlert(), preferencesMap.get("terminalChange"));
-		activeAlerts.put(new DepartureTerminalAlert(), preferencesMap.get("terminalChange"));
-		activeAlerts.put(new ArrivalTimeAlert(), preferencesMap.get("hourChange"));
-		activeAlerts.put(new DepartureTimeAlert(), preferencesMap.get("hourChange"));
-		activeAlerts.put(new StatusAlert(), preferencesMap.get("statusChange"));*/
 		frequency = Long.parseLong(PreferenceManager.getDefaultSharedPreferences(CONTEXT).getString("notificationFrequency", "300")) *60;
 	}
 

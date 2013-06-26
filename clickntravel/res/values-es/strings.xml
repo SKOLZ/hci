@@ -79,6 +79,5 @@
     <string name="price">Precio: </string>
     <string name="no_deals">No hay ofertas añadidas</string>
     <string name="no_deals_found">No hay ofertas disponibles para el destino elegido</string>
-
     <string name="add_deal_text">Agregar oferta</string>
-</resources>
+</resources>

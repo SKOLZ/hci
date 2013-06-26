@@ -21,7 +21,6 @@ public class AddedFlight{
 	private Airline airline;
 	private int flightId;
 	private int flightNumber;
-	//private List<Alert> alerts;
 	private FlightStatus status;
 
 	public AddedFlight(JSONObject status) throws JSONException {
@@ -32,8 +31,6 @@ public class AddedFlight{
 		this.departure = parseDestination(status.getJSONObject("departure"));
 		this.arrival = parseDestination(status.getJSONObject("arrival"));
 		this.airline = getAirline(status.getJSONObject("airline"));
-		//this.alerts = Arrays.asList(Alert.activeAlerts.keySet());;
-
 	}
 	
 
@@ -114,26 +111,4 @@ public class AddedFlight{
 		}
 		return notifications;
 	}
-	
-//	private List<Alert> parseAlerts(JSONObject json) {
-//		List<Alert> ret = new LinkedList<Alert>();
-//		if (json.optBoolean("Status"))
-//			ret.add(new StatusAlert());
-//		if (json.optBoolean("DepartureTime"))
-//			ret.add(new DepartureTimeAlert());
-//		if (json.optBoolean("DepartureTerminal"))
-//			ret.add(new DepartureTerminalAlert());
-//		if (json.optBoolean("DepartureGate"))
-//			ret.add(new DepartureGateAlert());
-//		if (json.optBoolean("BaggageGate"))
-//			ret.add(new BaggageGateAlert());
-//		if (json.optBoolean("ArrivalTime"))
-//			ret.add(new ArrivalTimeAlert());
-//		if (json.optBoolean("ArrivalTerminal"))
-//			ret.add(new ArrivalTerminalAlert());
-//		if (json.optBoolean("ArrivalGate"))
-//			ret.add(new ArrivalGateAlert());
-//		return ret;
-//	}
-	
 }

@@ -63,15 +63,22 @@
     <string name="yes">SI</string>
     <string name="comment_text">Commentare</string>
     <string name="see_comments">I commenti</string>
-	<string name="comment_added">Commento aggiunto</string>
-    
+    <string name="comment_added">Commento aggiunto</string>
+    <string name="saving_changes">Modifiche salvate</string>
     <string name="main_button_resultssearch">Risultati di offerte</string>
-    <string name="search_view_text">Cercare offerte per destinazione</string>
     <string name="deal">Offerta: </string>
+    <string name="new_status">Il nuovo status è:</string>
     <string name="price">Prezzo: </string>
-    
+    <string name="new_departure_hour">Il nuovo orario di partenza è:</string>
+    <string name="new_departure_terminal">La nuova terminale di partenza è:</string>
+    <string name="new_departure_gate">La nuova porta di partenza è:</string>
+    <string name="new_arrival_hour">Il nuovo orario di arrivo è:</string>
+    <string name="new_arrival_terminal">La nuova porta di arrivo è:</string>
+    <string name="new_baggage_gate">La nuova porta di equipaggio è:</string>
+    <string name="search_view_text">Trovare offerte per destinazione</string>
     <string name="no_deals">Nessuna offerta aggiunta</string>
     <string name="no_deals_found">Non ci sono offerte disponibili per la destinazione scelta</string>
-    
+    <string name="new_arrial_gate">La nuova terminale di arrivo è:</string>
     <string name="add_deal_text">Aggiungere offerta</string>
+
 </resources>

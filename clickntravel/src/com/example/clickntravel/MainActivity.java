@@ -145,6 +145,9 @@ public class MainActivity extends FragmentActivity {
 			intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			startActivity(intent);
 			return;
+		} else if (fragmentHandler.getCurrentKey().equals(FragmentKey.MAIN)) {
+			finish();
+			return;
 		}
 		super.onBackPressed();
 	}

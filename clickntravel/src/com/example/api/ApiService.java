@@ -69,8 +69,6 @@ public class ApiService extends IntentService{
 
 		b.putSerializable("return", (Serializable) jsonToParse);
 		
-		Log.d("cacona", "" + receiver);
-		
 		receiver.send(STATUS_OK, b);
 	}
 

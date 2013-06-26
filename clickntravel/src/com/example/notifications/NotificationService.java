@@ -48,8 +48,6 @@ public class NotificationService extends IntentService {
 	private void checkStatus(final AddedFlight flight) {
 		Callback callback = new Callback() {
 			
-			// Por alguna razon no se llama a handleResponse (no funcionan las notificaciones)
-			// Solo si se lanza desde dentro de este service...
 			public void handleResponse(JSONObject response) {
 				FlightStatus currentFlightStatus = null;
 				try {
@@ -58,16 +56,10 @@ public class NotificationService extends IntentService {
 					Log.d("json", "invalid status");
 				}
 				List<AlertNotification> notifs = flight.check(currentFlightStatus);
-				if (notifs.isEmpty()) {
-					Log.d("notif", "no hay notifs" + flight.getFlightNumber());
-				} else {
-					Log.d("else notif", "hay notifs" + flight.getFlightNumber());
-				}
 				for (AlertNotification n : notifs)
 					n.notifyAlert();
 			}
 		};
-		//ApiResultReceiver receiver = new ApiResultReceiver(new Handler(), callback);
 		ApiResultReceiver receiver = new ApiResultReceiver(null, callback);
 		
 		ApiIntent intent = new ApiIntent("GetFlightStatus", "Status", receiver, this);
